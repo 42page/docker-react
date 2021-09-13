@@ -1,4 +1,5 @@
 sudo: required
+
 services:
   - docker
 
@@ -6,6 +7,7 @@ before_install:
   - docker build -t chanwhekim/docker -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true USERNAME/docker-react npm run test
+  - docker run -e CI=true chanwhekim/docker npm run test
 
 language: generic
+
