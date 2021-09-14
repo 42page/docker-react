@@ -11,3 +11,15 @@ script:
 
 language: generic
 
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-770492388321"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  sceret_access_key:
+    secure: "$AWS_SECRET_KEY"
